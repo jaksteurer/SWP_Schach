@@ -6,7 +6,6 @@ public abstract class Spielfiguren {
 		 this.farbe = farbe;
 		 this.figur = figur;
 	 }
-	 
 	 public void ausgabe() {
 		 System.out.println("Figur: "+figur+"\nFarbe: "+ farbe);
 	 }

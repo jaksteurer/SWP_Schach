@@ -1,7 +1,6 @@
 public class SchachBrett {
 	
-	int größe = 8;
-	Spielfiguren[][] brett;	
+	static Spielfiguren[][] brett;	
 	E_Farben s=E_Farben.S;
 	E_Farben w=E_Farben.W;
 	
@@ -14,7 +13,7 @@ public class SchachBrett {
 			System.out.println(z+"x"+s+" ist schon belegt");
 		}else {
 		brett[z][s]=f;
-		System.out.println("Erfolreich befuellt.");
+		//System.out.println("befüllt");
 		}
 	}
 	
@@ -26,8 +25,7 @@ public class SchachBrett {
 		}
 	}
 	public int gesamtFiguren() {
-		int anzahlFiguren = gesamtFiguren(s) + gesamtFiguren(w);
-		return anzahlFiguren;
+		return gesamtFiguren(s) + gesamtFiguren(w);
 	}
 	public int gesamtFiguren(E_Farben f) {
 		int anz = 0;
@@ -39,5 +37,21 @@ public class SchachBrett {
 			}
 		}
 		return anz;
+	}
+	static void create() {
+		System.out.println("\n\t    SPIELFELD");
+		System.out.println("---------------------------------");
+			for (int i = 0; i < brett.length; i++) {
+				for (int j =0; j < brett.length; j++) {
+					try {
+						System.out.print("| "+brett[i][j].figur+" "); //+brett[i][j].farbe+
+					}
+					catch (NullPointerException e) {
+						System.out.print("|   ");	
+					}
+				}
+				System.out.println("|");
+				System.out.println("---------------------------------");
+			}
 	}
 }

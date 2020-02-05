@@ -9,28 +9,34 @@ public class SchachMain {
 		Figuren s = new Figuren(E_Schachfiguren.S, E_Farben.W);
 		Figuren b = new Figuren(E_Schachfiguren.B, E_Farben.S);
 		Figuren t = new Figuren(E_Schachfiguren.T, E_Farben.S);
+		Figuren b2 = new Figuren(E_Schachfiguren.B, E_Farben.S);
 		
 		E_Farben weiss = E_Farben.W;
 		E_Farben schwarz = E_Farben.S;
 		
 		SchachBrett brett = new SchachBrett(8);
 		brett.befuellen(k, 3, 5);
-		k.ausgabe();
+		//k.ausgabe();
 		brett.befuellen(q, 5, 3);
-		q.ausgabe();
+		//q.ausgabe();
 		brett.befuellen(l, 4, 6);
-		l.ausgabe();
+		//l.ausgabe();
 		brett.befuellen(s, 1, 6);
-		s.ausgabe();
+		//s.ausgabe();
 		brett.befuellen(b, 3, 4);
-		b.ausgabe();
-		brett.befuellen(t, 2, 8);
-		t.ausgabe();
+		//b.ausgabe();
+		brett.befuellen(t, 2, 7);
+		//t.ausgabe();
+		brett.befuellen(b2, 7, 4);
 		
+		System.out.println("\n------- Ausgabe -------");
 		System.out.println("Figuren am Brett: "+brett.gesamtFiguren());
 		System.out.println("davon weiss: "+brett.gesamtFiguren(weiss));
 		System.out.println("davon schwarz: "+brett.gesamtFiguren(schwarz));
 	
+		SchachBrett.create();
+		
 	}
+
 	
 }
